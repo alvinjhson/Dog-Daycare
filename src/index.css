@@ -9,14 +9,13 @@
   background-color: #f0f0f0;
 }
 
-/* Rubrikstil */
 .title {
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Knappstil */
+
 .btn {
   background-color: #007bff;
   color: white;
@@ -29,18 +28,17 @@
   transition: background-color 0.3s ease;
 }
 
-/* När man håller musen över knappen */
+
 .btn:hover {
   background-color: #0056b3;
 }
 
-/* Textstil under knappen */
 .text {
   font-size: 16px;
   color: #555;
 }
 
-/* Gör sidan responsiv */
+
 @media (max-width: 768px) {
   .title {
     font-size: 20px;

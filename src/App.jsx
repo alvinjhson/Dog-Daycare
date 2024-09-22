@@ -9,7 +9,6 @@ const App = () => {
    
       <nav>
         <ul className="nav-links">
-          {/* <li><a href="/">Hem</a></li> Direkt länk till Home */}
         </ul>
       </nav>
 
