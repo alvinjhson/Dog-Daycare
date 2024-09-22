@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom'; 
+import Home from './components/Home';  
+import Catalog from './components/Catalog';  
 
-function App() {
-  
-
-
+const App = () => {
   return (
-    <div>
-     Hej
-    </div>
-  )
-}
+    <div className="container">
+   
+      <nav>
+        <ul className="nav-links">
+          {/* <li><a href="/">Hem</a></li> Direkt länk till Home */}
+        </ul>
+      </nav>
 
-export default App
+    
+      <Routes>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/catalog" element={<Catalog />} /> 
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
