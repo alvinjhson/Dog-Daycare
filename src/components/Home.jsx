@@ -10,9 +10,9 @@ const Home = () => {
         <h1>Welcome to Dog Daycare</h1>
         
    
-        <Link to="/catalog">
+        {/* <Link to="/catalog">
           <button style={{ margin: '20px 0' }}>Gå till Katalog</button>
-        </Link>
+        </Link> */}
 
    
 
