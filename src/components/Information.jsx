@@ -44,18 +44,18 @@ const Information = () => {
   }
 
   return (
-    <div>
-      <h1>{dog.name}</h1>
-      <img src={dog.img} alt={dog.name} style={{ width: '300px', height: 'auto', borderRadius: '10px' }} />
-      <p>Breed: {dog.breed}</p>
-      <p>Sex: {dog.sex}</p>
-      <p>Age: {dog.age} år</p>
-      <p>Chipnumber: {dog.chipNumber}</p>
-      <h3>Ägarinformation</h3>
-      <p>Owner: {dog.owner.name} {dog.owner.lastName}</p>
-      <p>Phonenumber: {dog.owner.phoneNumber}</p>
-      <p>{dog.present ? 'present' : 'not present'}</p>
-    </div>
+    <div className="dog-info-container">
+  <h1>{dog.name}</h1>
+  <img src={dog.img} alt={dog.name} style={{ width: '300px', height: 'auto', borderRadius: '10px' }} />
+  <p>Breed: {dog.breed}</p>
+  <p>Sex: {dog.sex}</p>
+  <p>Age: {dog.age} år</p>
+  <p>Chipnumber: {dog.chipNumber}</p>
+  <h3>Owner information</h3>
+  <p>Owner: {dog.owner.name} {dog.owner.lastName}</p>
+  <p>Phonenumber: {dog.owner.phoneNumber}</p>
+  <p>{dog.present ? 'Present' : 'Not present'}</p>
+</div>
   );
 };
 
