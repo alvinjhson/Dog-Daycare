@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 const Catalog = () => {
   const [dogs, setDogs] = useState([]);
@@ -86,25 +86,20 @@ const Catalog = () => {
         <option value="5">5 year</option>
       </select>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '20px' }}>
-        {filteredDogs.length > 0 ? (
-          filteredDogs.map(dog => (
-            <div key={dog.chipNumber} style={{ textAlign: 'center' }}>
-              
-              <Link to={`/information/${dog.chipNumber}`}>
-                <img
-                  src={dog.img}
-                  alt={dog.name}
-                  style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '10px' }}
-                />
-                <h3>{dog.name}</h3>
-              </Link>
-            </div>
-          ))
-        ) : (
-          <p>Inga hundar matchar din sökning.</p>
-        )}
+      <div className="dog-list">
+  {filteredDogs.length > 0 ? (
+    filteredDogs.map(dog => (
+      <div key={dog.chipNumber} className="dog-item">
+        <Link to={`/information/${dog.chipNumber}`}>
+          <img src={dog.img} alt={dog.name} />
+          <h3>{dog.name}</h3>
+        </Link>
       </div>
+    ))
+  ) : (
+    <p>Inga hundar matchar din sökning.</p>
+  )}
+</div>
     </div>
   );
 };

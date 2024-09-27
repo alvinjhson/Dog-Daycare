@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react'; 
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Catalog from './components/Catalog';
 import Information from './components/Information';
-import './App.css'; // Import CSS file
+import './App.css'; 
 import dogpic from '/Volumes/ssd1/dogpic.jpg';
 
-
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); 
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false); 
+  };
+
   return (
     <div className="app">
-    {/* Header section with logo and navigation */}
-    <header className="header">
-      <div className="logo">
-        <img src= {dogpic} alt="Website Logo" />
-      </div>
+      
       <nav className="nav">
-        <ul>
+        <div className="logo">
+          <img src={dogpic} alt="Website Logo" />
+        </div>
+
+        <div className="menu-icon" onClick={toggleMenu}>
+          &#9776; 
+        </div>
+
+       
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
-            <Link to="/Home">Home</Link>
+           
+            <Link to="/" onClick={closeMenu}>Home</Link>
           </li>
           <li>
-            <Link to="/catalog">Catalog</Link>
+          
+            <Link to="/catalog" onClick={closeMenu}>Catalog</Link>
           </li>
         </ul>
       </nav>
-    </header>
 
-    {/* Other components will go here */}
-
-  
+    
       <Routes>
-        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<Home />} /> 
         <Route path="/catalog" element={<Catalog />} />
-        {/* Dynamic route for each dog's information */}
         <Route path="/information/:chipNumber" element={<Information />} />
       </Routes>
     </div>
